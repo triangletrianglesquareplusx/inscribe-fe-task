@@ -1,6 +1,7 @@
+
 const CommandPanel = () => {
   return (
-    <nav>CommandPanel</nav>
+    <nav></nav>
   )
 }
 
