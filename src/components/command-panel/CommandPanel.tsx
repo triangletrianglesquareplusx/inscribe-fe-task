@@ -14,7 +14,7 @@ const style = {
   border: "1px solid gray",
   borderRadius: '10px',
   boxShadow: 24,
-  p: 4,
+  p: 4
 };
 
 const CommandPanel = () => {
@@ -23,7 +23,7 @@ const CommandPanel = () => {
   const handleClose = () => setOpenModal(false);
   return (
     <nav className="container">
-      <p className="test">Inscribe - Todo List App</p>
+      <p className="test">Inscribe - Todo App</p>
       <Button title="Add New Note" variant="outlined" onClick={handleOpen} />
       <Modal open={openModal} onClose={handleClose}>
         <Box sx={style}>

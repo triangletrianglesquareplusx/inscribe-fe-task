@@ -7,7 +7,7 @@ type ButtonProps = {
 };
 const Button = ({ title, variant, onClick }: ButtonProps) => {
   return (
-    <MuiButton variant={variant} onClick={onClick}>
+    <MuiButton variant={variant} onClick={onClick} sx={{whiteSpace: "nowrap"}}>
       {title}
     </MuiButton>
   );
