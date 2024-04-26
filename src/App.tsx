@@ -1,12 +1,13 @@
 import './App.css'
+import CommandPanel from './components/command-panel/CommandPanel'
 
 function App() {
   
   return (
     <>
-      <div>
-        <p>Hey this is a React + Vite App</p>
-      </div>
+      
+        <CommandPanel/>
+      
     </>
   )
 }

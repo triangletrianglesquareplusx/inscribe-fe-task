@@ -1,13 +1,16 @@
-import MuiButton from '@mui/material/Button';
+import MuiButton from "@mui/material/Button";
 
 type ButtonProps = {
-    title: string
-    variant: 'text'|'outlined'|'contained'
-}
-const Button = ({title, variant}:ButtonProps) => {
+  title: string;
+  variant: "text" | "outlined" | "contained";
+  onClick: () => void;
+};
+const Button = ({ title, variant, onClick }: ButtonProps) => {
   return (
-    <MuiButton variant={variant}>{title}</MuiButton>
-  )
-}
+    <MuiButton variant={variant} onClick={onClick}>
+      {title}
+    </MuiButton>
+  );
+};
 
-export default Button
+export default Button;
