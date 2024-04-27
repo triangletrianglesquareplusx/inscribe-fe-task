@@ -30,15 +30,16 @@ const TaskForm = () => {
           <TextField
             label="Task definition"
             type="text"
-            sx={{ width: 400 }}
+            sx={{ width: 400, input: {color: 'white'} }}
             {...register("title", { required: "You must provide a title" })}
             error={!!errors.title}
             helperText={errors.title?.message}
+            
           />
           <TextField
             label="Task description"
             type="text"
-            sx={{ width: 400 }}
+            sx={{ width: 400, input: {color: 'white'} }}
             {...register("description", {
               required: "You must provide a task description",
             })}
