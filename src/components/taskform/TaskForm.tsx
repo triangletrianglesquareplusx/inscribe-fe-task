@@ -48,6 +48,7 @@ const TaskForm = () => {
           <Button
             title="Create"
             variant="outlined"
+            type="submit"
           />
         </Stack>
       </form>
