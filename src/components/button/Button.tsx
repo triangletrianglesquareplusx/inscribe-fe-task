@@ -4,8 +4,8 @@ import { SxProps } from "@mui/material";
 type ButtonProps = {
   title: string;
   variant: "text" | "outlined" | "contained";
-  onClick: () => void;
-  sx: SxProps;
+  onClick?: () => void;
+  sx?: SxProps;
 };
 const Button = ({ title, variant, onClick, sx }: ButtonProps) => {
   return (
