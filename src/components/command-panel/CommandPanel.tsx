@@ -2,7 +2,8 @@ import Button from "../button/Button";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import TaskForm from "../taskform/TaskForm";
-import { useState } from "react";
+import SingleNote from "../../data/single-note";
+import { useState, Dispatch, SetStateAction } from "react";
 import "./CommandPanel.css";
 
 const style = {
@@ -12,12 +13,16 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   border: "1px solid gray",
-  borderRadius: '10px',
+  borderRadius: "10px",
   boxShadow: 24,
-  p: 4
+  p: 4,
 };
 
-const CommandPanel = () => {
+type CommandPanelProps = {
+  handleTodos: Dispatch<SetStateAction<SingleNote[]>>;
+};
+
+const CommandPanel = ({ handleTodos }: CommandPanelProps) => {
   const [openModal, setOpenModal] = useState(false);
   const handleOpen = () => setOpenModal(true);
   const handleClose = () => setOpenModal(false);
@@ -27,7 +32,7 @@ const CommandPanel = () => {
       <Button title="Add New Note" variant="outlined" onClick={handleOpen} />
       <Modal open={openModal} onClose={handleClose}>
         <Box sx={style}>
-          <TaskForm/>
+          <TaskForm />
         </Box>
       </Modal>
     </nav>
