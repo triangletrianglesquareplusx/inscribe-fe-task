@@ -1,6 +1,7 @@
 import Button from "../button/Button";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
+import TaskForm from "../taskform/TaskForm";
 import { FormControl } from "@mui/base/FormControl";
 import { useState } from "react";
 import "./CommandPanel.css";
@@ -27,9 +28,7 @@ const CommandPanel = () => {
       <Button title="Add New Note" variant="outlined" onClick={handleOpen} />
       <Modal open={openModal} onClose={handleClose}>
         <Box sx={style}>
-          <FormControl>
-            <input />
-          </FormControl>
+          <TaskForm/>
         </Box>
       </Modal>
     </nav>
