@@ -1,6 +1,9 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import CardActions from "@mui/material/Typography";
+import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
+import Button from "../button/Button";
 
 type SingleNoteProps = {
   title: string;
@@ -16,7 +19,8 @@ const SingleNote = ({ title, description, date }: SingleNoteProps) => {
         backgroundColor: "inherit",
         color: "white",
         border: "1px solid gray",
-        marginBottom: '1em'
+        marginBottom: "1em",
+        display: "flex",
       }}
     >
       <CardContent>
@@ -28,6 +32,11 @@ const SingleNote = ({ title, description, date }: SingleNoteProps) => {
           {date}
         </Typography>
       </CardContent>
+      <CardActions>
+        <Button>
+          <DeleteOutlinedIcon />
+        </Button>
+      </CardActions>
     </Card>
   );
 };
