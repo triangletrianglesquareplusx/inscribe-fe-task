@@ -30,27 +30,28 @@ const TaskForm = () => {
           <TextField
             label="Task definition"
             type="text"
-            sx={{ width: 400, input: {color: 'white'} }}
-            {...register("title", { required: "You must provide a title" })}
+            sx={{ width: 400, input: { color: "white" } }}
+            {...register("title", {
+              required: "You must provide a title"
+            })}
             error={!!errors.title}
             helperText={errors.title?.message}
-            
           />
           <TextField
             label="Task description"
             type="text"
-            sx={{ width: 400, input: {color: 'white'} }}
+            sx={{ width: 400, input: { color: "white" } }}
             {...register("description", {
               required: "You must provide a task description",
+              maxLength: {
+                value: 15,
+                message: 'You must have no more than 15 symbols'
+              },
             })}
             error={!!errors.description}
             helperText={errors.description?.message}
           />
-          <Button
-            title="Create"
-            variant="outlined"
-            type="submit"
-          />
+          <Button title="Create" variant="outlined" type="submit" />
         </Stack>
       </form>
     </>
