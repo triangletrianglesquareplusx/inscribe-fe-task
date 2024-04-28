@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="mainLayout">
       <TodosContext.Provider value={{ todoTasks, setTodos }}>
-        <CommandPanel handleTodos={setTodos} />
+        <CommandPanel/>
         <MainPanel />
       </TodosContext.Provider>
     </div>

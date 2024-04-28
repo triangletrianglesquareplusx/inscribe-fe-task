@@ -2,8 +2,8 @@ import Button from "../button/Button";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import TaskForm from "../taskform/TaskForm";
-import SingleNote from "../../data/single-note";
-import { useState, Dispatch, SetStateAction } from "react";
+
+import { useState } from "react";
 import "./CommandPanel.css";
 
 const style = {
@@ -18,11 +18,7 @@ const style = {
   p: 4,
 };
 
-type CommandPanelProps = {
-  handleTodos: Dispatch<SetStateAction<SingleNote[]>>;
-};
-
-const CommandPanel = ({ handleTodos }: CommandPanelProps) => {
+const CommandPanel = () => {
   const [openModal, setOpenModal] = useState(false);
   const handleOpen = () => setOpenModal(true);
   const handleClose = () => setOpenModal(false);
