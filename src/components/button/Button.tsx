@@ -5,12 +5,19 @@ import { ReactNode } from "react";
 type ButtonProps = {
   title?: string;
   variant?: "text" | "outlined" | "contained";
-  onClick?: () => {};
+  onClick?: () => void;
   sx?: SxProps;
   type?: "submit" | "reset" | "button" | undefined;
-  children?: ReactNode
+  children?: ReactNode;
 };
-const Button = ({ title, variant, onClick, sx, type, children }: ButtonProps) => {
+const Button = ({
+  title,
+  variant,
+  onClick,
+  sx,
+  type,
+  children,
+}: ButtonProps) => {
   return (
     <MuiButton
       variant={variant}
@@ -18,7 +25,8 @@ const Button = ({ title, variant, onClick, sx, type, children }: ButtonProps) =>
       sx={{ ...sx, whiteSpace: "nowrap" }}
       type={type}
     >
-      {title}{children}
+      {title}
+      {children}
     </MuiButton>
   );
 };

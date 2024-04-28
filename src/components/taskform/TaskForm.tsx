@@ -26,6 +26,7 @@ const TaskForm = () => {
   const onSubmit = (data: TaskFormValues) => {
     const { title, description } = data;
     const uniqueId = uuidv4();
+    console.log(uniqueId)
     setTodos([
       ...todos,
       {

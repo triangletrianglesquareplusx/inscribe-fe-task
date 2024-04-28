@@ -10,6 +10,7 @@ const MainPanel = () => {
       {todos.map((todo) => (
         <SingleNote
           key={todo.id}
+          id={todo.id}
           title={todo.title}
           description={todo.description}
           date={todo.date}

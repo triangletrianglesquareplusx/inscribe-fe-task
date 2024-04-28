@@ -8,12 +8,13 @@ import { useContext } from "react";
 import TodosContext from "../../context/todos";
 
 type SingleNoteProps = {
+  id:string;
   title: string;
   description: string;
   date: string;
 };
 
-const SingleNoteCard = ({ title, description, date }: SingleNoteProps) => {
+const SingleNoteCard = ({ id,title, description, date }: SingleNoteProps) => {
   const {todos, setTodos} = useContext(TodosContext)
 
   const deleteParticularNote = (id: string) => {
@@ -42,7 +43,7 @@ const SingleNoteCard = ({ title, description, date }: SingleNoteProps) => {
         </Typography>
       </CardContent>
       <CardActions sx={{ p: 1.3 }}>
-        <Button onClick={deleteParticularNote}>
+        <Button onClick={()=>deleteParticularNote(id)}>
           <DeleteOutlinedIcon />
         </Button>
       </CardActions>
