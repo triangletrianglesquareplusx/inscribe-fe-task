@@ -2,12 +2,12 @@ import SingleNote from "../data/single-note";
 import { createContext, Dispatch, SetStateAction } from "react";
 
 interface TodosContext {
-  todoTasks: SingleNote[];
+  todos: SingleNote[];
   setTodos: Dispatch<SetStateAction<SingleNote[]>>;
 }
 
 const TodosContext = createContext<TodosContext>({
-  todoTasks: [],
+  todos: [],
   setTodos: () => {},
 });
 

@@ -7,10 +7,10 @@ import notes from "./data/notes";
 import { ToastContainer } from "react-toastify";
 
 const App = ()=> {
-  const [todoTasks, setTodos] = useState(notes);
+  const [todos, setTodos] = useState(notes);
   return (
     <div className="mainLayout">
-      <TodosContext.Provider value={{ todoTasks, setTodos }}>
+      <TodosContext.Provider value={{ todos, setTodos }}>
         <CommandPanel/>
         <MainPanel />
       </TodosContext.Provider>

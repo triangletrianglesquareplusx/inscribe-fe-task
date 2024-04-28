@@ -2,6 +2,8 @@ import { TextField, Stack } from "@mui/material";
 import { useForm } from "react-hook-form";
 import Button from "../button/Button";
 import notifyPositive from "../../helpers/toast";
+import { useContext } from "react";
+import TodosContext from "../../context/todos";
 
 type TaskFormValues = {
   title: string;
@@ -9,6 +11,7 @@ type TaskFormValues = {
 };
 
 const TaskForm = () => {
+  const { setTodos } = useContext(TodosContext);
   const form = useForm<TaskFormValues>({
     defaultValues: {
       title: "",
@@ -20,13 +23,12 @@ const TaskForm = () => {
   const { errors } = formState;
 
   const onSubmit = (data: TaskFormValues) => {
-    console.log(data);
-    console.log("submitted the form!");
+    const { title, description } = data;
     notifyPositive();
   };
   return (
     <>
-      <h1>Testing form..</h1>
+      <h1>Add a new task</h1>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Stack spacing={2} width={400}>
           <TextField
