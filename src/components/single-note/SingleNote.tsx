@@ -5,9 +5,10 @@ import Typography from "@mui/material/Typography";
 type SingleNoteProps = {
   title: string;
   description: string;
+  date: string
 };
 
-const SingleNote = ({ title, description }: SingleNoteProps) => {
+const SingleNote = ({ title, description, date }: SingleNoteProps) => {
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
@@ -16,6 +17,9 @@ const SingleNote = ({ title, description }: SingleNoteProps) => {
         </Typography>
         <Typography variant="body2">
           {description}
+        </Typography>
+        <Typography variant="h5" component="div">
+          {date}
         </Typography>
       </CardContent>
     </Card>

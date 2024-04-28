@@ -4,6 +4,7 @@ import Button from "../button/Button";
 import notifyPositive from "../../helpers/toast";
 import { useContext } from "react";
 import TodosContext from "../../context/todos";
+import { v4 as uuidv4 } from "uuid";
 
 type TaskFormValues = {
   title: string;
@@ -11,7 +12,7 @@ type TaskFormValues = {
 };
 
 const TaskForm = () => {
-  const { setTodos } = useContext(TodosContext);
+  const { todos, setTodos } = useContext(TodosContext);
   const form = useForm<TaskFormValues>({
     defaultValues: {
       title: "",
@@ -24,6 +25,16 @@ const TaskForm = () => {
 
   const onSubmit = (data: TaskFormValues) => {
     const { title, description } = data;
+    const uniqueId = uuidv4();
+    setTodos([
+      ...todos,
+      {
+        id: uniqueId,
+        title: title,
+        description: description,
+        date: new Date().toDateString(),
+      },
+    ]);
     notifyPositive();
   };
   return (
