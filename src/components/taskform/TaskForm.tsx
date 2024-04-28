@@ -26,7 +26,7 @@ const TaskForm = () => {
     <>
       <h1>Testing form..</h1>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <Stack spacing={2} width={600}>
+        <Stack spacing={2} width={400}>
           <TextField
             label="Task definition"
             type="text"
