@@ -4,8 +4,9 @@ import MainPanel from "./components/main-panel/MainPanel";
 import { useState } from "react";
 import TodosContext from "./context/todos";
 import notes from "./data/notes";
+import { ToastContainer } from "react-toastify";
 
-function App() {
+const App = ()=> {
   const [todoTasks, setTodos] = useState(notes);
   return (
     <div className="mainLayout">
@@ -13,6 +14,7 @@ function App() {
         <CommandPanel/>
         <MainPanel />
       </TodosContext.Provider>
+      <ToastContainer/>
     </div>
   );
 }

@@ -2,7 +2,6 @@ import Button from "../button/Button";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import TaskForm from "../taskform/TaskForm";
-
 import { useState } from "react";
 import "./CommandPanel.css";
 
@@ -29,7 +28,9 @@ const CommandPanel = () => {
       <Modal open={openModal} onClose={handleClose}>
         <Box sx={style}>
           <TaskForm />
+          
         </Box>
+        
       </Modal>
     </nav>
   );

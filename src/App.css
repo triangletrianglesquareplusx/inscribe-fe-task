@@ -16,3 +16,15 @@
 .mainLayout{
   display: flex;
 }
+
+@media (max-width: 576px) {
+  .mainLayout{
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .mainLayout{
+    flex-direction: row;
+  }
+}

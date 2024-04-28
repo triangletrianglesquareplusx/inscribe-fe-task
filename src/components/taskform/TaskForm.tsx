@@ -1,6 +1,7 @@
 import { TextField, Stack } from "@mui/material";
 import { useForm } from "react-hook-form";
 import Button from "../button/Button";
+import notifyPositive from "../../helpers/toast";
 
 type TaskFormValues = {
   title: string;
@@ -21,6 +22,7 @@ const TaskForm = () => {
   const onSubmit = (data: TaskFormValues) => {
     console.log(data);
     console.log("submitted the form!");
+    notifyPositive();
   };
   return (
     <>
@@ -32,7 +34,7 @@ const TaskForm = () => {
             type="text"
             sx={{ width: 400, input: { color: "white" } }}
             {...register("title", {
-              required: "You must provide a title"
+              required: "You must provide a title",
             })}
             error={!!errors.title}
             helperText={errors.title?.message}
@@ -45,7 +47,7 @@ const TaskForm = () => {
               required: "You must provide a task description",
               maxLength: {
                 value: 15,
-                message: 'You must have no more than 15 symbols'
+                message: "You must have no more than 15 symbols",
               },
             })}
             error={!!errors.description}
