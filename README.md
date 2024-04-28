@@ -6,7 +6,7 @@ Download a copy from github
 
 Navigate to the project folder
 
-In the command line, type - ```cd inscribe```, ```npm run install```, ```npm run dev``` and you should be good: )
+In the command line, type - ```npm run install```, ```npm run dev``` and you should be good: )
 
 ## Helpers or things I have used while working on the project:
 
