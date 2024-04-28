@@ -4,8 +4,8 @@ import { ReactNode } from "react";
 
 type ButtonProps = {
   title?: string;
-  variant: "text" | "outlined" | "contained";
-  onClick?: () => void;
+  variant?: "text" | "outlined" | "contained";
+  onClick?: () => {};
   sx?: SxProps;
   type?: "submit" | "reset" | "button" | undefined;
   children?: ReactNode
