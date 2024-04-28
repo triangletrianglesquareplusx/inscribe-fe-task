@@ -1,11 +1,10 @@
 import Container from "@mui/material/Container";
-import SingleNote from "../../data/single-note";
+import { useContext } from "react";
+import TodosContext from "../../context/todos";
 
-type MainPanelProps = {
-    todos: SingleNote[] 
-}
 
-const MainPanel = ({todos}:MainPanelProps) => {
+const MainPanel = () => {
+  const todos = useContext(TodosContext)
   return (
     <Container sx={{ p: 6 }}>
       This is where the tasks will be displayed. Current count is {todos.length}
