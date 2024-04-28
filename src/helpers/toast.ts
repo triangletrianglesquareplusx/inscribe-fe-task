@@ -7,4 +7,10 @@ const notifyPositive = () => {
   });
 };
 
-export default notifyPositive;
+const notifyNegative = () => {
+  toast.warn("Task Deleted!", {
+    position: "bottom-left",
+  });
+};
+
+export { notifyPositive, notifyNegative };

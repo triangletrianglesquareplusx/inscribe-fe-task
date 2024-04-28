@@ -8,6 +8,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import Button from "../button/Button";
 import { useContext, useState } from "react";
 import TodosContext from "../../context/todos";
+import { notifyNegative } from "../../helpers/toast";
 
 type SingleNoteProps = {
   id: string;
@@ -22,7 +23,7 @@ const SingleNoteCard = ({ id, title, description, date }: SingleNoteProps) => {
 
   const deleteParticularNote = (id: string) => {
     setTodos(todos.filter((todo) => todo.id !== id));
-    console.log(id);
+    notifyNegative()
   };
 
   const editNote = () => {

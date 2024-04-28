@@ -1,7 +1,7 @@
 import { TextField, Stack } from "@mui/material";
 import { useForm } from "react-hook-form";
 import Button from "../button/Button";
-import notifyPositive from "../../helpers/toast";
+import { notifyPositive } from "../../helpers/toast";
 import { useContext } from "react";
 import TodosContext from "../../context/todos";
 import { v4 as uuidv4 } from "uuid";
@@ -26,7 +26,7 @@ const TaskForm = () => {
   const onSubmit = (data: TaskFormValues) => {
     const { title, description } = data;
     const uniqueId = uuidv4();
-    console.log(uniqueId)
+    console.log(uniqueId);
     setTodos([
       ...todos,
       {
