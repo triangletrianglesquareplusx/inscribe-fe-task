@@ -10,14 +10,13 @@ const MainPanel = () => {
     <Container sx={{ p: 6, width: "70%" }}>
       <Grid container spacing={2}>
         {todos.map((todo) => (
-          <Grid item xs={12} md={6} lg={4}>
-          <SingleNote
-            key={todo.id}
-            id={todo.id}
-            title={todo.title}
-            description={todo.description}
-            date={todo.date}
-          />
+          <Grid item xs={12} md={6} lg={4} key={todo.id}>
+            <SingleNote
+              id={todo.id}
+              title={todo.title}
+              description={todo.description}
+              date={todo.date}
+            />
           </Grid>
         ))}
       </Grid>

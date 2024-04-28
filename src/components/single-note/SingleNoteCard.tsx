@@ -23,11 +23,12 @@ const SingleNoteCard = ({ id, title, description, date }: SingleNoteProps) => {
 
   const deleteParticularNote = (id: string) => {
     setTodos(todos.filter((todo) => todo.id !== id));
-    notifyNegative()
+    notifyNegative();
   };
 
   const editNote = () => {
     setIsEdited(true);
+    console.log("edit");
   };
 
   return (
@@ -41,25 +42,31 @@ const SingleNoteCard = ({ id, title, description, date }: SingleNoteProps) => {
         display: "flex",
       }}
     >
-      <CardContent>
-        <Typography variant="h5" component="div">
-          {title}
-        </Typography>
-        <Typography variant="body2">{description}</Typography>
-        <Typography variant="h5" component="div">
-          {date}
-        </Typography>
-      </CardContent>
-      <CardActions sx={{ p: 1.3 }}>
-        <Box display="flex" flexDirection="column" gap={2}>
-          <Button onClick={() => deleteParticularNote(id)}>
-            <DeleteOutlinedIcon />
-          </Button>
-          <Button conClick={() => editNote()}>
-            <EditIcon />
-          </Button>
-        </Box>
-      </CardActions>
+      {isEdited ? (
+        <div>test</div>
+      ) : (
+        <>
+          <CardContent>
+            <Typography variant="h5" component="div">
+              {title}
+            </Typography>
+            <Typography variant="body2">{description}</Typography>
+            <Typography variant="h5" component="div">
+              {date}
+            </Typography>
+          </CardContent>
+          <CardActions sx={{ p: 1.3 }}>
+            <Box display="flex" flexDirection="column" gap={2}>
+              <Button onClick={() => deleteParticularNote(id)}>
+                <DeleteOutlinedIcon />
+              </Button>
+              <Button onClick={() => editNote()}>
+                <EditIcon />
+              </Button>
+            </Box>
+          </CardActions>
+        </>
+      )}
     </Card>
   );
 };
