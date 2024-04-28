@@ -3,25 +3,32 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CardActions from "@mui/material/Typography";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
+import Box from "@mui/material/Box";
+import EditIcon from "@mui/icons-material/Edit";
 import Button from "../button/Button";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import TodosContext from "../../context/todos";
 
 type SingleNoteProps = {
-  id:string;
+  id: string;
   title: string;
   description: string;
   date: string;
 };
 
-const SingleNoteCard = ({ id,title, description, date }: SingleNoteProps) => {
-  const {todos, setTodos} = useContext(TodosContext)
+const SingleNoteCard = ({ id, title, description, date }: SingleNoteProps) => {
+  const { todos, setTodos } = useContext(TodosContext);
+  const [isEdited, setIsEdited] = useState(false);
 
   const deleteParticularNote = (id: string) => {
-    setTodos(todos.filter(todo=>todo.id !== id))
-    console.log(id)
+    setTodos(todos.filter((todo) => todo.id !== id));
+    console.log(id);
   };
-  
+
+  const editNote = () => {
+    setIsEdited(true);
+  };
+
   return (
     <Card
       sx={{
@@ -43,9 +50,14 @@ const SingleNoteCard = ({ id,title, description, date }: SingleNoteProps) => {
         </Typography>
       </CardContent>
       <CardActions sx={{ p: 1.3 }}>
-        <Button onClick={()=>deleteParticularNote(id)}>
-          <DeleteOutlinedIcon />
-        </Button>
+        <Box display="flex" flexDirection="column" gap={2}>
+          <Button onClick={() => deleteParticularNote(id)}>
+            <DeleteOutlinedIcon />
+          </Button>
+          <Button conClick={() => editNote()}>
+            <EditIcon />
+          </Button>
+        </Box>
       </CardActions>
     </Card>
   );
